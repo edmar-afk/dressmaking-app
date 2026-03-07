@@ -28,14 +28,14 @@ export default function Index() {
 
       <View className="bg-white w-full pt-12 rounded-t-3xl items-center pb-12">
         <Text className="text-3xl font-extrabold text-gray-800 text-center px-6">
-          Welcome to Your Dressmaking Journey – Measure & Create!
+          Welcome to MeasureFit – Measure & Create!
         </Text>
         <Text className="text-lg text-center mt-4 px-8">
           Measure with care, craft with creativity, and bring your ideas to
           life, one stitch at a time.
         </Text>
         <Pressable
-          onPress={() => router.push("/page-one/PageOne")}
+          onPress={() => router.push("PageOne")}
           className="mt-12 bg-purple-500 px-24 py-5 rounded-lg mb-8"
         >
           <Text className="text-white text-lg font-semibold">

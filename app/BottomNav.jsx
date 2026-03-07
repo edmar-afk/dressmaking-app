@@ -15,6 +15,7 @@ export default function BottomNav() {
             source={lessonsIcon}
             className="w-8 h-8"
             resizeMode="contain"
+            
           />
           <Text className="text-[10px] mt-1 text-gray-700">
             Lesson
