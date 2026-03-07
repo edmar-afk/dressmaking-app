@@ -5,6 +5,7 @@ import BottomNav from "./BottomNav";
 import Introduction from "./page-one/Introduction";
 import Tools from "./page-one/Tools";
 import { useRouter } from "expo-router";
+import Definition from "./page-two/Definition";
 const PageTwo = () => {
   const router = useRouter();
 
@@ -14,7 +15,7 @@ const PageTwo = () => {
         className="p-4"
         contentContainerStyle={{ paddingBottom: 120 }}
       >
-      
+      <Definition/>
         <Pressable
           onPress={() => router.push("PageOne")}
           className="w-44 mx-auto "
