@@ -114,6 +114,44 @@ export default function RootLayout() {
           ),
         }}
       />
+
+      <Stack.Screen
+        name="PageThree"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Career opportunities
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
     </Stack>
   );
 }

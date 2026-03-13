@@ -11,6 +11,7 @@ import { useState, useRef } from "react";
 
 const ToolsModal = ({ tool }) => {
   const [visible, setVisible] = useState(false);
+
   const scaleAnim = useRef(new Animated.Value(0)).current;
 
   const openModal = () => {
@@ -57,7 +58,11 @@ const ToolsModal = ({ tool }) => {
             />
 
             <ScrollView className="p-6 flex-1">
-              <Text className="text-xl font-bold mb-2">{tool.name}</Text>
+              <View className="flex flex-row items-center justify-between">
+                <Text className="text-xl font-bold mb-2">{tool.name}</Text>
+
+             
+              </View>
 
               <Text className="mt-4 font-semibold mb-1">Tool Description</Text>
               <Text className="text-gray-600 mb-3 text-justify">

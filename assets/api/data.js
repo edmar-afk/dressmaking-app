@@ -1,15 +1,16 @@
-import tapeImg from '../images/tools/tape.png';
-import rulerImg from '../images/tools/ruler.jpg';
-import frenchImg from '../images/tools/french.jpg';
-import lShapeImg from '../images/tools/lShape.jpg';
-import notebookImg from '../images/tools/notebook.png';
-import chalkpencilImg from '../images/tools/chalkpencil.png';
+import tapeImg from "../images/tools/tape.png";
+import rulerImg from "../images/tools/ruler.jpg";
+import frenchImg from "../images/tools/french.jpg";
+import lShapeImg from "../images/tools/lShape.jpg";
+import notebookImg from "../images/tools/notebook.png";
+import chalkpencilImg from "../images/tools/chalkpencil.png";
 
 const tools = [
   {
     id: 1,
     name: "Tape Measure",
     image: tapeImg,
+
     description:
       "A flexible measuring tool made from cloth, plastic, or metal, designed to accurately measure lengths and circumferences. It is widely used in tailoring, sewing, construction, and DIY projects where precise measurements are important.",
     uses: "Used to measure lengths, widths, heights, and body dimensions. Essential for sewing garments, measuring furniture, or determining material requirements in construction.",
@@ -21,6 +22,7 @@ const tools = [
     id: 2,
     name: "Ruler",
     image: rulerImg,
+
     description:
       "A straight, rigid measuring tool made of wood, plastic, or metal. It is used to draw straight lines, measure short distances, and ensure accuracy in both artistic and technical work.",
     uses: "Ideal for drawing precise lines, measuring objects up to its length, checking alignment, and assisting in pattern-making or design sketches.",
@@ -32,6 +34,7 @@ const tools = [
     id: 3,
     name: "French Curve",
     image: frenchImg,
+
     description:
       "A set of curved templates made of plastic or metal used for drawing smooth, precise curves. It is especially useful for shapes that are difficult to create with a compass or freehand drawing.",
     uses: "Used in fashion design, pattern making, and technical drawings to create armholes, necklines, or other curved shapes accurately.",
@@ -43,6 +46,7 @@ const tools = [
     id: 4,
     name: "L-square",
     image: lShapeImg,
+
     description:
       "A right-angled measuring tool shaped like the letter 'L', commonly used for drawing and verifying 90-degree angles. It is essential in drafting, pattern making, woodworking, and construction.",
     uses: "Helps in drawing perpendicular lines, checking square corners, and ensuring accuracy in patterns, furniture making, or technical projects.",
@@ -54,6 +58,7 @@ const tools = [
     id: 5,
     name: "Chalk/Pencil",
     image: chalkpencilImg,
+
     description:
       "Marking tools used to temporarily make lines or notes on various surfaces such as fabric, wood, or paper. Chalk and pencils allow for adjustments before final cutting or drafting.",
     uses: "Used for marking measurements, drawing patterns, making design notes, or guiding cutting processes without leaving permanent marks.",
@@ -65,6 +70,7 @@ const tools = [
     id: 6,
     name: "Notebook/Measurement Chart",
     image: notebookImg,
+    video: null,
     description:
       "A notebook or chart for recording measurements, observations, and project details. It helps in organizing information and serves as a reference for future work.",
     uses: "Used to document body measurements, project dimensions, design specifications, and any important notes to ensure consistency and accuracy.",
@@ -74,4 +80,12 @@ const tools = [
   },
 ];
 
+
 export default tools;
+
+
+
+
+
+
+
