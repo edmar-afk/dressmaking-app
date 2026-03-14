@@ -15,7 +15,7 @@ const PageThree = () => {
         <Career/>
       
         <Pressable
-          onPress={() => router.push("PageThree")}
+          onPress={() => router.push("PageFour")}
           className="w-44 mx-auto "
         >
           <Text className="mt-14 text-center text-white bg-blue-700 py-4 rounded-lg font-semibold">

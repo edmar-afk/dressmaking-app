@@ -5,66 +5,48 @@ import guideIcon from "../assets/images/navigations/measurement.png";
 import recordIcon from "../assets/images/navigations/record.png";
 import tutorialIcon from "../assets/images/navigations/tutorial.png";
 import quizIcon from "../assets/images/navigations/quiz.png";
+import { useRouter, usePathname } from "expo-router";
 
 export default function BottomNav() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: "Lesson", icon: lessonsIcon, route: "/Lesson" },
+    { name: "Guide", icon: guideIcon, route: "/Guide" },
+    { name: "Record", icon: recordIcon, route: "/Record" },
+    { name: "Tutorials", icon: tutorialIcon, route: "/Tutorials" },
+    { name: "Quiz", icon: quizIcon, route: "/Quiz" },
+  ];
+
   return (
     <View className="fixed bottom-0 w-full z-50">
-      <View className="flex-row justify-between items-center p-3 pb-8 pt-4 w-full bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-lg border border-white/20 backdrop-blur-lg">
-        <TouchableOpacity className="flex-col items-center justify-center p-2">
-          <Image
-            source={lessonsIcon}
-            className="w-8 h-8"
-            resizeMode="contain"
-            
-          />
-          <Text className="text-[10px] mt-1 text-gray-700">
-            Lesson
-          </Text>
-        </TouchableOpacity>
+      <View className="flex-row justify-between items-center p-3 pb-8 pt-4 w-full bg-white/80 rounded-2xl shadow-lg border border-white/20 backdrop-blur-lg">
+        {navItems.map((item) => {
+          const isActive = pathname === item.route;
 
-        <TouchableOpacity className="flex-col items-center justify-center p-2">
-          <Image
-            source={guideIcon}
-            className="w-7 h-7"
-            resizeMode="contain"
-          />
-          <Text className="text-[10px] mt-1 text-gray-700">
-            Guide
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity className="flex-col items-center justify-center p-2">
-          <Image
-            source={recordIcon}
-            className="w-8 h-8"
-            resizeMode="contain"
-          />
-          <Text className="text-[10px] mt-1 text-gray-700">
-            Record
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity className="flex-col items-center justify-center p-2">
-          <Image
-            source={tutorialIcon}
-            className="w-8 h-8"
-            resizeMode="contain"
-          />
-          <Text className="text-[10px] mt-1 text-gray-700">
-            Tutorials
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity className="flex-col items-center justify-center p-2">
-          <Image
-            source={quizIcon}
-            className="w-8 h-8"
-            resizeMode="contain"
-          />
-          <Text className="text-[10px] mt-1 text-gray-700">
-            Quiz
-          </Text>
-        </TouchableOpacity>
+          return (
+            <TouchableOpacity
+              key={item.route}
+              onPress={() => router.push(item.route)}
+              className="flex-col items-center justify-center p-2"
+            >
+              <Image
+                source={item.icon}
+                className="w-8 h-8"
+                resizeMode="contain"
+                style={{ tintColor: isActive ? "#7c3aed" : undefined }}
+              />
+              <Text
+                className={`text-[10px] mt-1 ${
+                  isActive ? "text-purple-600 font-bold underline" : "text-gray-700"
+                }`}
+              >
+                {item.name}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
     </View>
   );
