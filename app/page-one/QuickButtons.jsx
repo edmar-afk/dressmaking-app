@@ -9,13 +9,52 @@ import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const QuickButtons = () => {
+  const TOTAL_LESSONS = 13; // total number of lessons
+
   const [totalScore, setTotalScore] = useState(0);
   const [percentage, setPercentage] = useState(0);
+  const [measurementCount, setMeasurementCount] = useState(0);
+  const [lessonCount, setLessonCount] = useState(0);
+  const [lessonPercentage, setLessonPercentage] = useState(0);
+  const [guidePercentage, setGuidePercentage] = useState("0%");
+  const [tutorialPercentage, setTutorialPercentage] = useState(0);
+
+  const loadTutorial = async () => {
+    try {
+      const stored = await AsyncStorage.getItem("tutorialprogress");
+      const data = stored ? JSON.parse(stored) : {};
+
+      const completedCount = Object.values(data).filter(Boolean).length;
+      const percent = Math.round((completedCount / 3) * 100);
+
+      setTutorialPercentage(percent);
+    } catch (e) {
+      console.log("Error loading tutorial:", e);
+    }
+  };
 
   useEffect(() => {
-    loadScores();
+    loadTutorial();
+    const interval = setInterval(loadTutorial, 1000);
+    return () => clearInterval(interval);
   }, []);
 
+  const loadGuide = async () => {
+    try {
+      const stored = await AsyncStorage.getItem("guide");
+      if (stored) {
+        setGuidePercentage(stored.endsWith("%") ? stored : `${stored}%`);
+      } else {
+        setGuidePercentage("0%");
+      }
+    } catch (e) {
+      console.log("Error loading guide:", e);
+    }
+  };
+
+  useEffect(() => {
+    loadGuide();
+  }, []);
   const loadScores = async () => {
     try {
       const mcRaw = await AsyncStorage.getItem("multipleChoiceScore");
@@ -39,6 +78,43 @@ const QuickButtons = () => {
       console.log("Error loading scores:", e);
     }
   };
+
+  const loadMeasurementCount = async () => {
+    try {
+      const stored = await AsyncStorage.getItem("measurements");
+      const data = stored ? JSON.parse(stored) : [];
+      setMeasurementCount(data.length);
+    } catch (e) {
+      console.log("Error loading measurements:", e);
+    }
+  };
+
+  useEffect(() => {
+    loadScores();
+    loadMeasurementCount();
+  }, []);
+
+  const loadLessonCount = async () => {
+    try {
+      const stored = await AsyncStorage.getItem("infosClickedCount");
+      const data = stored ? JSON.parse(stored) : [];
+      setLessonCount(data.length);
+
+      const percent = Math.round((data.length / TOTAL_LESSONS) * 100);
+      setLessonPercentage(percent);
+    } catch (e) {
+      console.log("Error loading infosClickedCount:", e);
+    }
+  };
+  useEffect(() => {
+    loadScores();
+  }, []);
+
+  useEffect(() => {
+    loadLessonCount();
+    const interval = setInterval(loadLessonCount, 1000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <View className="mt-12">
       <View className="flex-row gap-2">
@@ -54,7 +130,9 @@ const QuickButtons = () => {
             style={{ tintColor: "white" }}
           />
           <View>
-            <Text className="text-4xl text-white font-bold">50%</Text>
+            <Text className="text-4xl text-white font-bold">
+              {lessonPercentage}%
+            </Text>
             <Text className="text-lg text-white font-normal">Lesson</Text>
           </View>
         </LinearGradient>
@@ -71,7 +149,9 @@ const QuickButtons = () => {
             style={{ tintColor: "white" }}
           />
           <View>
-            <Text className="text-4xl text-white font-bold">50%</Text>
+            <Text className="text-4xl text-white font-bold">
+              {guidePercentage}
+            </Text>
             <Text className="text-lg text-white font-normal">Guide</Text>
           </View>
         </LinearGradient>
@@ -89,7 +169,9 @@ const QuickButtons = () => {
             style={{ tintColor: "white" }}
           />
           <View>
-            <Text className="text-xl text-white font-bold">1</Text>
+            <Text className="text-xl text-white font-bold">
+              {measurementCount}
+            </Text>
             <Text className="text-md text-white font-normal">
               Record Measurements
             </Text>
@@ -108,7 +190,10 @@ const QuickButtons = () => {
             style={{ tintColor: "white" }}
           />
           <View>
-            <Text className="text-xl text-white font-bold">49%</Text>
+            <Text className="text-xl text-white font-bold">
+              {" "}
+              {tutorialPercentage}%
+            </Text>
             <Text className="text-md text-white font-normal">Tutorials</Text>
           </View>
         </LinearGradient>
@@ -124,11 +209,14 @@ const QuickButtons = () => {
             style={{ tintColor: "white" }}
           />
           <View>
-            <View className='flex flex-row items-end gap-1'>
+            <View className="flex flex-row items-end gap-1">
               <Text className="text-xl text-white font-bold">
                 {totalScore}/15
               </Text>
-              <Text className="text-xs text-white mb-0.5"> {percentage}% overall</Text>
+              <Text className="text-xs text-white mb-0.5">
+                {" "}
+                {percentage}% overall
+              </Text>
             </View>
             <Text className="text-md text-white font-normal">Quiz Score</Text>
           </View>

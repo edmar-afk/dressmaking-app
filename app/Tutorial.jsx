@@ -4,23 +4,67 @@ import howToReadTapeMeasureVid from "../assets/videos/tutorials/how-to-read-tape
 import correctPosture from "../assets/videos/tutorials/correct-posture.mp4";
 import takingBodyMeasurement from "../assets/videos/tutorials/taking-body-measurement.mp4";
 import { VideoView, useVideoPlayer } from "expo-video";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect, useState, useRef } from "react";
+
+const STORAGE_KEY = "tutorialprogress";
 
 const Tutorial = () => {
+  const [progress, setProgress] = useState({
+    tape: false,
+    measurement: false,
+    posture: false,
+  });
+
+  const sectionPositions = useRef({}); // store y-offset and height for each section
+
+  // Load previous progress
+  useEffect(() => {
+    const loadProgress = async () => {
+      const saved = await AsyncStorage.getItem(STORAGE_KEY);
+      if (saved) setProgress(JSON.parse(saved));
+    };
+    loadProgress();
+  }, []);
+
+  const updateProgress = async (key) => {
+    if (!progress[key]) {
+      const updated = { ...progress, [key]: true };
+      setProgress(updated);
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+      console.log("Scroll progress saved:", updated);
+    }
+  };
+
+  const handleScroll = (event) => {
+    const scrollY = event.nativeEvent.contentOffset.y;
+    const windowHeight = event.nativeEvent.layoutMeasurement.height;
+
+    Object.entries(sectionPositions.current).forEach(([key, { y, height }]) => {
+      // Check if section is at least partially visible
+      if (scrollY + windowHeight >= y + height * 0.3 && scrollY <= y + height) {
+        updateProgress(key);
+      }
+    });
+  };
+
   const tapePlayer = useVideoPlayer(howToReadTapeMeasureVid, (player) => {
     player.loop = false;
   });
-
   const posturePlayer = useVideoPlayer(correctPosture, (player) => {
     player.loop = false;
   });
-
   const measurementPlayer = useVideoPlayer(takingBodyMeasurement, (player) => {
     player.loop = false;
   });
 
   return (
     <View className="flex-1 bg-purple-50">
-      <ScrollView className="px-5 pt-6">
+      <ScrollView
+        className="px-5 pt-6"
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+      >
         <Text className="text-2xl font-bold text-purple-900 mb-2">
           Dressmaking Tutorials
         </Text>
@@ -31,7 +75,15 @@ const Tutorial = () => {
           correctly.
         </Text>
 
-        <View className="bg-white p-4 rounded-2xl mb-6 shadow">
+        <View
+          className="bg-white p-4 rounded-2xl mb-6 shadow"
+          onLayout={(e) => {
+            sectionPositions.current.tape = {
+              y: e.nativeEvent.layout.y,
+              height: e.nativeEvent.layout.height,
+            };
+          }}
+        >
           <Text className="text-lg font-bold text-purple-800 mb-3">
             1. How to Use a Tape Measure
           </Text>
@@ -62,7 +114,15 @@ const Tutorial = () => {
           </Text>
         </View>
 
-        <View className="bg-white p-4 rounded-2xl mb-6 shadow">
+        <View
+          className="bg-white p-4 rounded-2xl mb-6 shadow"
+          onLayout={(e) => {
+            sectionPositions.current.measurement = {
+              y: e.nativeEvent.layout.y,
+              height: e.nativeEvent.layout.height,
+            };
+          }}
+        >
           <Text className="text-lg font-bold text-purple-800 mb-3">
             2. Taking Body Measurements
           </Text>
@@ -93,7 +153,15 @@ const Tutorial = () => {
           </Text>
         </View>
 
-        <View className="bg-white p-4 rounded-2xl mb-10 shadow">
+        <View
+          className="bg-white p-4 rounded-2xl mb-10 shadow"
+          onLayout={(e) => {
+            sectionPositions.current.posture = {
+              y: e.nativeEvent.layout.y,
+              height: e.nativeEvent.layout.height,
+            };
+          }}
+        >
           <Text className="text-lg font-bold text-purple-800 mb-3">
             3. Correct Posture During Measuring
           </Text>

@@ -9,13 +9,14 @@ import {
 } from "react-native";
 import React, { useState, useRef, useEffect } from "react";
 
-const InfosModal = ({ desc, triggerText, styles }) => {
+const InfosModal = ({ desc, triggerText, styles, onPress }) => {
   const [visible, setVisible] = useState(false);
   const scaleAnim = useRef(new Animated.Value(0.5)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
 
   const openModal = () => {
     setVisible(true);
+    if (onPress) onPress(); // <-- notify FrontInfo that this info was clicked
     Animated.parallel([
       Animated.timing(scaleAnim, {
         toValue: 1,
@@ -86,7 +87,9 @@ const InfosModal = ({ desc, triggerText, styles }) => {
                 >
                   {triggerText}
                 </Text>
-                <Text className="text-gray-800 p-4 text-lg text-justify">{desc}</Text>
+                <Text className="text-gray-800 p-4 text-lg text-justify">
+                  {desc}
+                </Text>
               </Animated.View>
             </TouchableWithoutFeedback>
           </Animated.View>
