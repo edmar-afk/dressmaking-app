@@ -45,7 +45,7 @@ const badges = [
     image: tutorialBadge,
     category: "Tutorial",
     storageKey: "tutorialprogress",
-    passingScore: 100,
+    passingScore: 3,
     total: 3, // total number of tutorial items
   },
 
