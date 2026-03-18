@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Dressmaking App",
-    "slug": "dressmaking-app",
+    "name": "MeasureFit",
+    "slug": "Measure-Fit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
