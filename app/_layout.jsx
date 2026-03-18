@@ -153,7 +153,6 @@ export default function RootLayout() {
         }}
       />
 
-
       <Stack.Screen
         name="Lesson"
         options={{
@@ -177,6 +176,309 @@ export default function RootLayout() {
                 }}
               >
                 Lessons
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="Guide"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Measurement Guide
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="Record"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Measurement Recording Chart
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="Converter"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Measurement Calculator
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="Tutorial"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Dress making Tutorials
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="Quiz"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Quiz Challenge
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="MultipleChoice"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Multiple Choice Challenge
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="Identification"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                Identification Challenge
+              </Text>
+              <Image
+                source={logo}
+                style={{
+                  width: 35,
+                  height: 35,
+                  borderRadius: 100,
+                }}
+                resizeMode="contain"
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="TrueOrFalse"
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "#a855f7" },
+          headerTintColor: "#fff",
+          headerTitle: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontFamily: "Poppins_400Regular",
+                  fontSize: 18,
+                }}
+              >
+                True or False Challenge
               </Text>
               <Image
                 source={logo}

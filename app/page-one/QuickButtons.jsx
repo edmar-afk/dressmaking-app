@@ -5,8 +5,40 @@ import guideIcon from "../../assets/images/navigations/measurement.png";
 import recordIcon from "../../assets/images/navigations/record.png";
 import tutorialIcon from "../../assets/images/navigations/tutorial.png";
 import quizIcon from "../../assets/images/navigations/quiz.png";
+import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const QuickButtons = () => {
+  const [totalScore, setTotalScore] = useState(0);
+  const [percentage, setPercentage] = useState(0);
+
+  useEffect(() => {
+    loadScores();
+  }, []);
+
+  const loadScores = async () => {
+    try {
+      const mcRaw = await AsyncStorage.getItem("multipleChoiceScore");
+      const tfRaw = await AsyncStorage.getItem("trueOrFalseScore");
+      const idRaw = await AsyncStorage.getItem("identificationScore");
+
+      const mc = mcRaw ? JSON.parse(mcRaw) : null;
+      const tf = tfRaw ? JSON.parse(tfRaw) : null;
+      const id = idRaw ? JSON.parse(idRaw) : null;
+
+      const mcScore = mc?.score ?? 0;
+      const tfScore = tf?.score ?? 0;
+      const idScore = id?.score ?? 0;
+
+      const total = mcScore + tfScore + idScore; // max 15
+      const percent = Math.round((total / 15) * 100);
+
+      setTotalScore(total);
+      setPercentage(percent);
+    } catch (e) {
+      console.log("Error loading scores:", e);
+    }
+  };
   return (
     <View className="mt-12">
       <View className="flex-row gap-2">
@@ -58,7 +90,9 @@ const QuickButtons = () => {
           />
           <View>
             <Text className="text-xl text-white font-bold">1</Text>
-            <Text className="text-md text-white font-normal">Record Measurements</Text>
+            <Text className="text-md text-white font-normal">
+              Record Measurements
+            </Text>
           </View>
         </LinearGradient>
 
@@ -90,7 +124,12 @@ const QuickButtons = () => {
             style={{ tintColor: "white" }}
           />
           <View>
-            <Text className="text-xl text-white font-bold">50/100</Text>
+            <View className='flex flex-row items-end gap-1'>
+              <Text className="text-xl text-white font-bold">
+                {totalScore}/15
+              </Text>
+              <Text className="text-xs text-white mb-0.5"> {percentage}% overall</Text>
+            </View>
             <Text className="text-md text-white font-normal">Quiz Score</Text>
           </View>
         </LinearGradient>

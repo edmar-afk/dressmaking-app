@@ -5,6 +5,7 @@ import guideIcon from "../assets/images/navigations/measurement.png";
 import recordIcon from "../assets/images/navigations/record.png";
 import tutorialIcon from "../assets/images/navigations/tutorial.png";
 import quizIcon from "../assets/images/navigations/quiz.png";
+import homeIcon from "../assets/images/navigations/home.png";
 import { useRouter, usePathname } from "expo-router";
 
 export default function BottomNav() {
@@ -12,10 +13,11 @@ export default function BottomNav() {
   const pathname = usePathname();
 
   const navItems = [
+    { name: "home", icon: homeIcon, route: "/PageOne" },
     { name: "Lesson", icon: lessonsIcon, route: "/Lesson" },
     { name: "Guide", icon: guideIcon, route: "/Guide" },
     { name: "Record", icon: recordIcon, route: "/Record" },
-    { name: "Tutorials", icon: tutorialIcon, route: "/Tutorials" },
+    { name: "Tutorial", icon: tutorialIcon, route: "/Tutorial" },
     { name: "Quiz", icon: quizIcon, route: "/Quiz" },
   ];
 
@@ -39,7 +41,9 @@ export default function BottomNav() {
               />
               <Text
                 className={`text-[10px] mt-1 ${
-                  isActive ? "text-purple-600 font-bold underline" : "text-gray-700"
+                  isActive
+                    ? "text-purple-600 font-bold underline"
+                    : "text-gray-700"
                 }`}
               >
                 {item.name}
