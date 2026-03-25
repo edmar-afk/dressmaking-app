@@ -1,9 +1,11 @@
 import tapeImg from "../images/tools/tape.png";
-import rulerImg from "../images/tools/ruler.jpg";
+import rulerImg from "../images/tools/ruler.png";
 import frenchImg from "../images/tools/french.jpg";
 import lShapeImg from "../images/tools/lShape.jpg";
 import notebookImg from "../images/tools/notebook.png";
-import chalkpencilImg from "../images/tools/chalkpencil.png";
+import chalkpencilImg from "../images/tools/chalkpencil.jpg";
+import gaugeImg from "../images/tools/gauge.jpg";
+import yardImg from "../images/tools/yard.jpg";
 
 const tools = [
   {
@@ -78,14 +80,30 @@ const tools = [
       "Write clearly and neatly to maintain legibility. Avoid tearing pages or spilling liquids on the notebook to keep the data safe and organized.",
     tips: "Store in a clean, dry place to prevent damage from moisture. Use bookmarks or tabs to quickly locate important information, and update it regularly to keep records current.",
   },
+  {
+    id: 7,
+    name: "Yard Stick ",
+    image: yardImg,
+    video: null,
+    description:
+      "A long, straight measuring tool typically 36 inches (1 yard) in length, made of wood, metal, or plastic. It is commonly used for measuring larger lengths and drawing long straight lines.",
+    uses: "Used for measuring longer distances, drafting patterns, marking fabric, and ensuring straight lines in sewing and construction projects.",
+    handling:
+      "Place the yardstick flat on the surface and align it carefully before measuring or drawing. Avoid bending or dropping it to maintain accuracy.",
+    tips: "Store flat or hang it to prevent warping. Keep markings clean and visible, and avoid exposing it to moisture if made of wood.",
+  },
+  {
+    id: 8,
+    name: "Sewing Gauge",
+    image: gaugeImg,
+    video: null,
+    description:
+      "A small measuring tool with a sliding marker, used for measuring short distances accurately. It is commonly made of metal or plastic and is essential in detailed sewing work.",
+    uses: "Used for measuring hems, seam allowances, pleats, buttonholes, and other small, precise measurements in garment construction.",
+    handling:
+      "Adjust the slider carefully to the desired measurement and hold it firmly while marking. Ensure the tool is flat against the fabric for accuracy.",
+    tips: "Keep the slider clean and moving smoothly. Store in a safe place to avoid bending or losing the small parts.",
+  },
 ];
 
-
 export default tools;
-
-
-
-
-
-
-

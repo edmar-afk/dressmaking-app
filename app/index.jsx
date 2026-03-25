@@ -42,7 +42,7 @@ export default function Index() {
             Let's Get Started
           </Text>
         </Pressable>
-        <View className="flex flex-row gap-12">
+        {/* <View className="flex flex-row gap-12">
           <Text className="text-gray-600 font-semibold text-sm underline">
             REFLECTION
           </Text>
@@ -52,7 +52,7 @@ export default function Index() {
           <Text className="text-gray-600 font-semibold text-sm underline">
             REFERENCES
           </Text>
-        </View>
+        </View> */}
       </View>
     </View>
   );

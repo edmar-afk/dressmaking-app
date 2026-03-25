@@ -17,15 +17,15 @@ const PageOne = () => {
         <Greetings />
         <Progress />
         <Introduction />
-        <Tools />
-        <Pressable
+        {/* <Tools /> */}
+        {/* <Pressable
           onPress={() => router.push("PageTwo")}
           className="w-44 mx-auto "
         >
           <Text className="mt-14 text-center text-white bg-blue-700 py-4 rounded-lg font-semibold">
             Next
           </Text>
-        </Pressable>
+        </Pressable> */}
       </ScrollView>
       <BottomNav />
     </View>

@@ -6,6 +6,7 @@ import takingBodyMeasurement from "../assets/videos/tutorials/taking-body-measur
 import { VideoView, useVideoPlayer } from "expo-video";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState, useRef } from "react";
+import { Feather } from "@expo/vector-icons";
 
 const STORAGE_KEY = "tutorialprogress";
 
@@ -66,13 +67,11 @@ const Tutorial = () => {
         scrollEventThrottle={16}
       >
         <Text className="text-2xl font-bold text-purple-900 mb-2">
-          Dressmaking Tutorials
+          Basic Measurement Guide
         </Text>
 
         <Text className="text-gray-600 mb-6">
-          Learn the basic skills used in dressmaking. Follow the videos and
-          simple steps below to understand how tailors measure the body
-          correctly.
+          Watch the sample videos and follow simple steps
         </Text>
 
         <View
@@ -94,8 +93,12 @@ const Tutorial = () => {
             allowsPictureInPicture
             style={{ height: 200, borderRadius: 12 }}
           />
+          <View className="flex-row items-center mt-2">
+            <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=hI-fhFyS6a8</Text>
+            <Feather name="youtube" size={18} color="red" />
+          </View>
 
-          <Text className="mt-4 text-gray-700 font-semibold">Step Guide</Text>
+          <Text className="mt-4 text-gray-700 font-semibold">Steps</Text>
 
           <Text className="text-gray-600 mt-2">
             1. Hold the beginning of the tape measure at number 0.
@@ -133,8 +136,12 @@ const Tutorial = () => {
             allowsPictureInPicture
             style={{ height: 200, borderRadius: 12 }}
           />
+          <View className="flex-row items-center mt-2">
+            <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=3ZSfY87v6pM</Text>
+            <Feather name="youtube" size={18} color="red" />
+          </View>
 
-          <Text className="mt-4 text-gray-700 font-semibold">Step Guide</Text>
+          <Text className="mt-4 text-gray-700 font-semibold">Steps</Text>
 
           <Text className="text-gray-600 mt-2">
             1. Ask the person to stand straight and relaxed.
@@ -172,8 +179,12 @@ const Tutorial = () => {
             allowsPictureInPicture
             style={{ height: 200, borderRadius: 12 }}
           />
+          <View className="flex-row items-center mt-2">
+            <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=PopVQruxSPY&t=51s</Text>
+            <Feather name="youtube" size={18} color="red" />
+          </View>
 
-          <Text className="mt-4 text-gray-700 font-semibold">Step Guide</Text>
+          <Text className="mt-4 text-gray-700 font-semibold">Steps</Text>
 
           <Text className="text-gray-600 mt-2">
             1. Stand upright with your shoulders relaxed.

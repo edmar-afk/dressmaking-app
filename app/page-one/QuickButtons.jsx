@@ -58,21 +58,14 @@ const QuickButtons = () => {
   const loadScores = async () => {
     try {
       const mcRaw = await AsyncStorage.getItem("multipleChoiceScore");
-      const tfRaw = await AsyncStorage.getItem("trueOrFalseScore");
-      const idRaw = await AsyncStorage.getItem("identificationScore");
-
       const mc = mcRaw ? JSON.parse(mcRaw) : null;
-      const tf = tfRaw ? JSON.parse(tfRaw) : null;
-      const id = idRaw ? JSON.parse(idRaw) : null;
 
       const mcScore = mc?.score ?? 0;
-      const tfScore = tf?.score ?? 0;
-      const idScore = id?.score ?? 0;
+      const maxScore = 10;
 
-      const total = mcScore + tfScore + idScore; // max 15
-      const percent = Math.round((total / 15) * 100);
+      const percent = Math.round((mcScore / maxScore) * 100);
 
-      setTotalScore(total);
+      setTotalScore(mcScore);
       setPercentage(percent);
     } catch (e) {
       console.log("Error loading scores:", e);
@@ -211,7 +204,7 @@ const QuickButtons = () => {
           <View>
             <View className="flex flex-row items-end gap-1">
               <Text className="text-xl text-white font-bold">
-                {totalScore}/15
+                {totalScore}/10
               </Text>
               <Text className="text-xs text-white mb-0.5">
                 {" "}

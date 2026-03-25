@@ -19,11 +19,11 @@ const MultipleChoice = () => {
 
   useEffect(() => {
     saveProgress();
-  }, [currentQuestion, score]);
+  }, [currentQuestion, score, answeredQuestions]);
 
   const loadProgress = async () => {
     try {
-      const saved = await AsyncStorage.getItem("multipleChoiceScore");
+      const saved = await AsyncStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
         setCurrentQuestion(parsed.currentQuestion ?? 0);
@@ -40,7 +40,7 @@ const MultipleChoice = () => {
         score,
         answeredQuestions,
       };
-      await AsyncStorage.setItem("multipleChoiceScore", JSON.stringify(data));
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     } catch (e) {}
   };
 
@@ -48,20 +48,14 @@ const MultipleChoice = () => {
     if (showFeedback) return;
 
     const questionId = quiz[currentQuestion].id;
+    const correctAnswer = quiz[currentQuestion].correctAnswer;
+    const isCorrect = choice === correctAnswer;
 
-    // ❌ Prevent re-answering
-    if (answeredQuestions[questionId]) return;
+    const previousAnswer = answeredQuestions[questionId];
 
     setSelectedChoice(choice);
     setShowFeedback(true);
 
-    const isCorrect = choice === quiz[currentQuestion].correctAnswer;
-
-    if (isCorrect) {
-      setScore((prev) => prev + 1);
-    }
-
-    // ✅ Mark question as answered
     setAnsweredQuestions((prev) => ({
       ...prev,
       [questionId]: {
@@ -69,6 +63,19 @@ const MultipleChoice = () => {
         isCorrect,
       },
     }));
+
+    if (!previousAnswer) {
+      if (isCorrect) {
+        setScore((prev) => prev + 1);
+      }
+    } else {
+      if (previousAnswer.isCorrect && !isCorrect) {
+        setScore((prev) => prev - 1);
+      }
+      if (!previousAnswer.isCorrect && isCorrect) {
+        setScore((prev) => prev + 1);
+      }
+    }
   };
 
   const handleNext = () => {
@@ -81,6 +88,20 @@ const MultipleChoice = () => {
   };
 
   const question = quiz[currentQuestion];
+  const previousAnswer = answeredQuestions[question.id];
+
+  const hasChoices = question.choices && question.choices.length > 0;
+  const hasAnswer = question.correctAnswer && question.correctAnswer !== "";
+
+  useEffect(() => {
+    if (previousAnswer) {
+      setSelectedChoice(previousAnswer.selected);
+      setShowFeedback(true);
+    } else {
+      setSelectedChoice(null);
+      setShowFeedback(false);
+    }
+  }, [currentQuestion]);
 
   return (
     <View className="flex-1 relative bg-purple-50">
@@ -88,19 +109,15 @@ const MultipleChoice = () => {
         contentContainerStyle={{ paddingBottom: 120 }}
         className="p-4"
       >
-        {/* TITLE + DESCRIPTION */}
         <View className="mb-4">
           <Text className="text-2xl font-bold text-purple-900">
             Dressmaking Challenge 🧵
           </Text>
           <Text className="text-purple-700 mt-2">
             Test your knowledge in dressmaking with this multiple choice quiz.
-            Choose your answers wisely—each correct choice increases your score.
-            Can you complete all questions with a perfect result?
           </Text>
         </View>
 
-        {/* SCORE + PROGRESS */}
         <View className="mb-4 bg-purple-200 p-4 rounded-xl">
           <Text className="text-purple-900 font-bold">
             Score: {score} / {quiz.length}
@@ -110,45 +127,44 @@ const MultipleChoice = () => {
           </Text>
         </View>
 
-        {/* QUESTION CARD */}
         <View className="bg-purple-200 rounded-2xl p-6 shadow-lg">
           <Text className="text-xl font-bold text-purple-900 mb-4">
             Q{question.id}: {question.question}
           </Text>
 
-          {question.choices.map((choice, index) => {
-            const isSelected = selectedChoice === choice;
-            const isAnswered = answeredQuestions[question.id];
-            let bgColor = "bg-white";
-            let textColor = "text-purple-900";
+          {/* Choices */}
+          {hasChoices &&
+            question.choices.map((choice, index) => {
+              const isSelected = selectedChoice === choice;
 
-            if (showFeedback) {
-              if (choice === question.correctAnswer) {
-                bgColor = "bg-green-500";
-                textColor = "text-white";
-              } else if (isSelected && choice !== question.correctAnswer) {
-                bgColor = "bg-red-500";
-                textColor = "text-white";
+              let bgColor = "bg-white";
+              let textColor = "text-purple-900";
+
+              if (showFeedback) {
+                if (choice === question.correctAnswer) {
+                  bgColor = "bg-green-500";
+                  textColor = "text-white";
+                } else if (isSelected && choice !== question.correctAnswer) {
+                  bgColor = "bg-red-500";
+                  textColor = "text-white";
+                }
+              } else if (isSelected) {
+                bgColor = "bg-purple-300";
               }
-            } else if (isSelected) {
-              bgColor = "bg-purple-300";
-            }
 
-            return (
-              <Pressable
-                key={index}
-                disabled={!!isAnswered}
-                onPress={() => handleChoice(choice)}
-                className={`${bgColor} rounded-xl p-4 mb-3 shadow ${
-                  isAnswered ? "opacity-60" : ""
-                }`}
-              >
-                <Text className={`${textColor} font-medium`}>{choice}</Text>
-              </Pressable>
-            );
-          })}
+              return (
+                <Pressable
+                  key={index}
+                  onPress={() => handleChoice(choice)}
+                  className={`${bgColor} rounded-xl p-4 mb-3 shadow`}
+                >
+                  <Text className={`${textColor} font-medium`}>{choice}</Text>
+                </Pressable>
+              );
+            })}
 
-          {showFeedback && (
+          {/* Feedback */}
+          {showFeedback && hasChoices && hasAnswer && (
             <View className="mt-4 p-4 bg-purple-100 rounded-xl shadow">
               <Text className="text-purple-800">
                 {selectedChoice === question.correctAnswer
@@ -159,16 +175,17 @@ const MultipleChoice = () => {
               <Text className="text-purple-700 mt-2 text-sm">
                 {question.explainCorrectAnswer}
               </Text>
-
-              {currentQuestion < quiz.length - 1 && (
-                <Pressable
-                  onPress={handleNext}
-                  className="mt-4 bg-purple-500 p-3 rounded-xl"
-                >
-                  <Text className="text-white text-center font-bold">Next</Text>
-                </Pressable>
-              )}
             </View>
+          )}
+
+          {/* Next Button (always available except last) */}
+          {currentQuestion < quiz.length - 1 && (
+            <Pressable
+              onPress={handleNext}
+              className="mt-4 bg-purple-500 p-3 rounded-xl"
+            >
+              <Text className="text-white text-center font-bold">Next</Text>
+            </Pressable>
           )}
         </View>
       </ScrollView>

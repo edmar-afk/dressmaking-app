@@ -1,223 +1,142 @@
 const quiz = [
   {
     id: 1,
-    question: "What is Dressmaking?",
-    choices: [
-      "The process of designing and sewing clothes",
-      "The process of washing clothes",
-      "The process of selling clothes",
-      "The process of ironing clothes",
-    ],
-    correctAnswer: "The process of designing and sewing clothes",
+    question: "Which tool is primarily used to take body measurements?",
+    choices: ["A. Ruler", "B. Tape measure", "C. French curve", "D. L-square"],
+    correctAnswer: "B. Tape measure",
     explainCorrectAnswer:
-      "Dressmaking refers to the designing, cutting, and sewing of garments to create clothing.",
+      "A tape measure is flexible and designed to wrap around the body, making it ideal for accurate body measurements.",
     category: "Multiple Choice",
   },
   {
     id: 2,
-    question:
-      "Which tool is commonly used to measure body size in dressmaking?",
-    choices: ["Ruler", "Tape Measure", "Hammer", "Compass"],
-    correctAnswer: "Tape Measure",
+    question: "Which tool is used to draw curved lines in pattern drafting?",
+    choices: ["A. Tape measure", "B. Chalk", "C. French curve", "D. Notebook"],
+    correctAnswer: "C. French curve",
     explainCorrectAnswer:
-      "A tape measure is flexible and used to measure body parts accurately for proper garment fitting.",
+      "A French curve is specifically designed to help draw smooth and accurate curved lines in pattern drafting.",
     category: "Multiple Choice",
   },
   {
     id: 3,
-    question: "What is the main purpose of a pattern in dressmaking?",
-    choices: [
-      "To decorate the fabric",
-      "To guide the cutting and sewing of fabric",
-      "To measure the body",
-      "To iron the fabric",
-    ],
-    correctAnswer: "To guide the cutting and sewing of fabric",
+    question:
+      "Which tool is used to draw straight lines and right angles in pattern making?",
+    choices: ["A. Tape measure", "B. L-square", "C. Needle", "D. Pins"],
+    correctAnswer: "B. L-square",
     explainCorrectAnswer:
-      "Patterns act as templates that help dressmakers cut fabric pieces correctly before sewing them together.",
+      "An L-square is used to create straight lines and perfect right angles, which are essential in pattern making.",
     category: "Multiple Choice",
   },
   {
     id: 4,
-    question: "Which tool is used to cut fabric in dressmaking?",
-    choices: ["Needle", "Scissors", "Tape Measure", "Pin Cushion"],
-    correctAnswer: "Scissors",
+    question: "What is the main purpose of seam allowance in dressmaking?",
+    choices: [
+      "A. To decorate the garment",
+      "B. To provide extra fabric for sewing",
+      "C. To reduce garment size",
+      "D. To measure fabric length",
+    ],
+    correctAnswer: "B. To provide extra fabric for sewing",
     explainCorrectAnswer:
-      "Fabric scissors are specifically designed to cut cloth cleanly and accurately.",
+      "Seam allowance gives extra space beyond the stitching line so pieces can be joined properly without affecting the final size.",
     category: "Multiple Choice",
   },
   {
     id: 5,
-    question:
-      "Why is taking accurate body measurements important in dressmaking?",
+    question: "Which body part is measured to determine skirt length?",
     choices: [
-      "To make clothes heavier",
-      "To ensure the garment fits properly",
-      "To make sewing faster",
-      "To reduce fabric color",
+      "A. Shoulder to waist",
+      "B. Waist to desired length",
+      "C. Bust to hip",
+      "D. Armhole to wrist",
     ],
-    correctAnswer: "To ensure the garment fits properly",
+    correctAnswer: "B. Waist to desired length",
     explainCorrectAnswer:
-      "Accurate measurements ensure that the finished garment fits the wearer comfortably and correctly.",
+      "Skirt length is measured from the waist down to the desired length depending on the style.",
+    category: "Multiple Choice",
+  },
+  {
+    id: 6,
+    question: "Why is it important to measure accurately in dressmaking?",
+    choices: [
+      "A. To finish sewing faster",
+      "B. To ensure proper fit and client satisfaction",
+      "C. To save time cutting fabric",
+      "D. To make sewing easier",
+    ],
+    correctAnswer: "B. To ensure proper fit and client satisfaction",
+    explainCorrectAnswer:
+      "Accurate measurements ensure garments fit well, which is essential for comfort and satisfaction.",
+    category: "Multiple Choice",
+  },
+  {
+    id: 7,
+    question:
+      "When taking a bust measurement, how should the tape measure be positioned?",
+    choices: [
+      "A. Very tight around the chest",
+      "B. Loosely and evenly around the fullest part",
+      "C. Only on one side",
+      "D. Above the shoulders",
+    ],
+    correctAnswer: "B. Loosely and evenly around the fullest part",
+    explainCorrectAnswer:
+      "The tape should be level and comfortably snug around the fullest part of the bust for accuracy.",
+    category: "Multiple Choice",
+  },
+  {
+    id: 8,
+    question:
+      "Where should the tape measure be placed when measuring the waist?",
+    choices: [
+      "A. Around the hips",
+      "B. Around the natural waistline",
+      "C. Around the chest",
+      "D. Around the shoulders",
+    ],
+    correctAnswer: "B. Around the natural waistline",
+    explainCorrectAnswer:
+      "The natural waistline is the narrowest part of the torso and is the correct reference point for waist measurement.",
+    category: "Multiple Choice",
+  },
+  {
+    id: 9,
+    question: "After taking a measurement, what is the best practice?",
+    choices: [
+      "A. Memorize the value",
+      "B. Estimate the number",
+      "C. Record it immediately",
+      "D. Ask someone else for the value",
+    ],
+    correctAnswer: "C. Record it immediately",
+    explainCorrectAnswer:
+      "Recording measurements immediately prevents errors and ensures accuracy during garment construction.",
+    category: "Multiple Choice",
+  },
+  {
+    id: 10,
+    question:
+      "What attitude should a student show while taking measurements for a client?",
+    choices: [
+      "A. Rushing the process",
+      "B. Being patient, careful, and attentive",
+      "C. Guessing measurements",
+      "D. Ignoring instructions",
+    ],
+    correctAnswer: "B. Being patient, careful, and attentive",
+    explainCorrectAnswer:
+      "Proper attitude ensures accuracy, professionalism, and client comfort during measurement.",
     category: "Multiple Choice",
   },
 
   {
-    id: 6,
-    question: "Measurement taken around the neck",
-    choices: [
-      "Neck circumference",
-      "Shoulder width",
-      "Bust circumference",
-      "Waist circumference",
-    ],
-    correctAnswer: "Neck circumference",
-    explainCorrectAnswer: "This measures around the base of the neck.",
-    category: "Identification",
-  },
-  {
-    id: 7,
-    question: "Measurement from shoulder tip to shoulder tip",
-    choices: [
-      "Shoulder width",
-      "Bust circumference",
-      "Hip circumference",
-      "Back length",
-    ],
-    correctAnswer: "Shoulder width",
-    explainCorrectAnswer: "This measures the width across the shoulders.",
-    category: "Identification",
-  },
-  {
-    id: 8,
-    question: "Measurement around the fullest part of the chest",
-    choices: [
-      "Bust circumference",
-      "Waist circumference",
-      "Armhole",
-      "Sleeve length",
-    ],
-    correctAnswer: "Bust circumference",
-    explainCorrectAnswer:
-      "This is measured around the fullest part of the bust.",
-    category: "Identification",
-  },
-  {
-    id: 9,
-    question: "Measurement around the natural waistline",
-    choices: [
-      "Waist circumference",
-      "Hip circumference",
-      "Back length",
-      "Inseam (optional)",
-    ],
-    correctAnswer: "Waist circumference",
-    explainCorrectAnswer: "Measured around the narrowest part of the waist.",
-    category: "Identification",
-  },
-  {
     id: 10,
-    question: "Measurement around the fullest part of the hips",
-    choices: [
-      "Hip circumference",
-      "Bust circumference",
-      "Skirt length",
-      "Armhole",
-    ],
-    correctAnswer: "Hip circumference",
-    explainCorrectAnswer: "Measured around the widest part of the hips.",
-    category: "Identification",
-  },
-
-  {
-    id: 11,
-    question: "Dressmaking involves designing and sewing garments.",
-    choices: ["True", "False"],
-    correctAnswer: "True",
-    explainCorrectAnswer:
-      "Dressmaking includes designing, cutting, and sewing garments.",
-    category: "True or False",
-  },
-  {
-    id: 12,
-    question: "A tape measure is not needed in dressmaking.",
-    choices: ["True", "False"],
-    correctAnswer: "False",
-    explainCorrectAnswer:
-      "A tape measure is essential for accurate body measurements.",
-    category: "True or False",
-  },
-  {
-    id: 13,
-    question: "Patterns are used as guides for cutting fabric.",
-    choices: ["True", "False"],
-    correctAnswer: "True",
-    explainCorrectAnswer:
-      "Patterns help ensure fabric is cut correctly before sewing.",
-    category: "True or False",
-  },
-  {
-    id: 14,
-    question: "Scissors are not used in dressmaking.",
-    choices: ["True", "False"],
-    correctAnswer: "False",
-    explainCorrectAnswer: "Scissors are essential tools for cutting fabric.",
-    category: "True or False",
-  },
-  {
-    id: 15,
-    question: "Accurate body measurements help ensure proper fit.",
-    choices: ["True", "False"],
-    correctAnswer: "True",
-    explainCorrectAnswer:
-      "Correct measurements are key to well-fitting garments.",
-    category: "True or False",
-  },
-  {
-    id: 16,
-    question: "The waist circumference is measured around the hips.",
-    choices: ["True", "False"],
-    correctAnswer: "False",
-    explainCorrectAnswer:
-      "Waist circumference is measured at the natural waistline, not the hips.",
-    category: "True or False",
-  },
-  {
-    id: 17,
     question:
-      "Bust circumference is measured at the fullest part of the chest.",
-    choices: ["True", "False"],
-    correctAnswer: "True",
-    explainCorrectAnswer: "This ensures proper fitting around the upper body.",
-    category: "True or False",
-  },
-  {
-    id: 18,
-    question: "Back length measures from shoulder to waist.",
-    choices: ["True", "False"],
-    correctAnswer: "True",
-    explainCorrectAnswer:
-      "Back length is taken from the shoulder down to the waistline.",
-    category: "True or False",
-  },
-  {
-    id: 19,
-    question: "Sleeve length is measured from the waist to the wrist.",
-    choices: ["True", "False"],
-    correctAnswer: "False",
-    explainCorrectAnswer:
-      "Sleeve length is measured from the shoulder to the wrist.",
-    category: "True or False",
-  },
-  {
-    id: 20,
-    question:
-      "Hip circumference is measured at the narrowest part of the body.",
-    choices: ["True", "False"],
-    correctAnswer: "False",
-    explainCorrectAnswer:
-      "Hip circumference is measured at the widest part of the hips.",
-    category: "True or False",
+      "Reflection: \nHow can accurate use of dressmaking measuring tools, along with patience and attention to detail, help you achieve proper garment fit in real-life situations?",
+    choices: [],
+    correctAnswer: "",
+    explainCorrectAnswer: "",
+    category: "Multiple Choice",
   },
 ];
 

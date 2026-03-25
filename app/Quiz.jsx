@@ -69,7 +69,7 @@ const Quiz = () => {
             }
           },
         },
-      ]
+      ],
     );
   };
 
@@ -79,35 +79,41 @@ const Quiz = () => {
 
     if (avg < 3) {
       setCheer(
-        "You're just getting started! 📘 Try learning the basics first and build a strong foundation."
+        "You're just getting started! 📘 Try learning the basics first and build a strong foundation.",
       );
     } else if (avg < 6) {
       setCheer(
-        "Nice effort! 💪 You're improving—keep practicing to sharpen your knowledge."
+        "Nice effort! 💪 You're improving—keep practicing to sharpen your knowledge.",
       );
     } else if (avg < 9) {
       setCheer("Great job! 🔥 You’re doing well—just a bit more to master it.");
     } else {
       setCheer(
-        "Excellent work! 🎉 You’ve mastered this—keep challenging yourself!"
+        "Excellent work! 🎉 You’ve mastered this—keep challenging yourself!",
       );
     }
   };
 
   return (
     <View className="flex-1 bg-purple-100">
-      <ScrollView contentContainerStyle={{ paddingBottom: 120 }} className="p-4">
+      <ScrollView
+        contentContainerStyle={{ paddingBottom: 120 }}
+        className="p-4"
+      >
         <View className="bg-white rounded-3xl p-6 shadow-2xl">
           <Text className="text-base text-gray-500">{greeting}, 👋</Text>
           <Text className="text-3xl font-bold mt-1">
-            Ready to test your <Text className="text-purple-600">Knowledge?</Text>
+            Ready to test your{" "}
+            <Text className="text-purple-600">Knowledge?</Text>
           </Text>
           <Text className="text-gray-500 mt-3">
-            Choose a quiz and track your progress.
+            To update, tap the quiz again to see latest results.
           </Text>
 
           <View className="mt-4 bg-purple-50 border border-purple-200 p-4 rounded-xl">
-            <Text className="text-purple-700 font-medium text-center">{cheer}</Text>
+            <Text className="text-purple-700 font-medium text-center">
+              {cheer}
+            </Text>
           </View>
 
           <View className="mt-8 gap-4">
@@ -126,7 +132,7 @@ const Quiz = () => {
               <View className="flex-row items-center gap-2">
                 <View className="bg-white/20 px-4 py-2 rounded-xl">
                   <Text className="text-white font-bold text-lg">
-                    {scores.multipleChoice}/5
+                    {scores.multipleChoice}/10
                   </Text>
                 </View>
                 <Pressable
@@ -138,7 +144,7 @@ const Quiz = () => {
               </View>
             </Pressable>
 
-            <Pressable
+            {/* <Pressable
               onPress={() => router.push("/Identification")}
               className="bg-white border border-purple-500 py-5 px-4 rounded-2xl shadow-sm active:opacity-80 flex-row justify-between items-center"
             >
@@ -161,9 +167,9 @@ const Quiz = () => {
                   <Text className="text-white font-semibold">Retry</Text>
                 </Pressable>
               </View>
-            </Pressable>
+            </Pressable> */}
 
-            <Pressable
+            {/* <Pressable
               onPress={() => router.push("/TrueOrFalse")}
               className="bg-purple-500 py-5 px-4 rounded-2xl shadow-md active:opacity-80 flex-row justify-between items-center"
             >
@@ -184,11 +190,11 @@ const Quiz = () => {
                   <Text className="text-white font-semibold">Retry</Text>
                 </Pressable>
               </View>
-            </Pressable>
+            </Pressable> */}
           </View>
         </View>
 
-        <Badges/>
+        <Badges />
       </ScrollView>
 
       <BottomNav />

@@ -1,17 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import tools from "../../assets/api/data";
 import ToolsModal from "./ToolsModal";
+import { useRouter } from "expo-router";
 
 const Tools = () => {
+  const router = useRouter();
+
   return (
-    <View className="mt-12">
-      <Text className="text-2xl font-semibold">
-        Tools and Materials Included
-      </Text>
+    <View className="">
+      <Text className="text-2xl font-semibold">Measurement Tools</Text>
 
       <Text className="text-lg text-gray-600 mt-2">
-        Here are the tools and materials you'll need for your dressmaking
+        Measurement tools in dressmaking are devices used to take accurate body
+        measurements needed in making well-fitted garments.
+      </Text>
+      <Text className="text-lg text-gray-600 mt-2">
+        Here are the measurement tools you'll need for your dressmaking
         journey. Tap for more details:
       </Text>
 
@@ -22,6 +27,15 @@ const Tools = () => {
           </View>
         ))}
       </View>
+
+      <Pressable
+        onPress={() => router.push("PageTwo")}
+        className="w-44 mx-auto "
+      >
+        <Text className="mt-14 text-center text-white bg-blue-700 py-4 rounded-lg font-semibold">
+          Next
+        </Text>
+      </Pressable>
     </View>
   );
 };

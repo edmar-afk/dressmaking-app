@@ -4,6 +4,7 @@ import dressmakerVid from "../../assets/videos/dressmaker.mp4";
 import tailorVid from "../../assets/videos/tailor.mp4";
 import fashionDesignerVid from "../../assets/videos/fashionDesigner.mp4";
 import alterationVid from "../../assets/videos/alteration.mp4";
+import { Feather } from "@expo/vector-icons";
 
 const Career = () => {
   const dressmakerPlayer = useVideoPlayer(dressmakerVid, (player) => {
@@ -44,6 +45,10 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
+        <View className="flex-row items-center mt-2">
+          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=Gxh29ZRS25g&t=49s</Text>
+          <Feather name="youtube" size={18} color="red" />
+        </View>
 
         <Text className="text-lg text-gray-600 mt-4 leading-7">
           Dressmaking offers a variety of career opportunities for individuals
@@ -66,6 +71,10 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
+        <View className="flex-row items-center mt-2">
+          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=hEFRX8iV_AI&t=1s</Text>
+          <Feather name="youtube" size={18} color="red" />
+        </View>
 
         <Text className="text-lg text-gray-600 mt-4 leading-7">
           A tailor focuses on making, repairing, and adjusting garments to
@@ -93,6 +102,10 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
+        <View className="flex-row items-center mt-2">
+          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=367veujwj_Y&t=30s</Text>
+          <Feather name="youtube" size={18} color="red" />
+        </View>
 
         <Text className="text-lg text-gray-600 mt-4 leading-7">
           A fashion designer is responsible for creating new clothing styles,
@@ -123,6 +136,10 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
+        <View className="flex-row items-center mt-2">
+          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=oezNGspma18</Text>
+          <Feather name="youtube" size={18} color="red" />
+        </View>
 
         <Text className="text-lg text-gray-600 mt-4 leading-7">
           An alteration specialist focuses on modifying and adjusting existing

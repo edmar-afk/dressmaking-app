@@ -16,8 +16,9 @@ export default function BottomNav() {
     { name: "home", icon: homeIcon, route: "/PageOne" },
     { name: "Lesson", icon: lessonsIcon, route: "/Lesson" },
     { name: "Guide", icon: guideIcon, route: "/Guide" },
-    { name: "Record", icon: recordIcon, route: "/Record" },
     { name: "Tutorial", icon: tutorialIcon, route: "/Tutorial" },
+    { name: "Record", icon: recordIcon, route: "/Record" },
+
     { name: "Quiz", icon: quizIcon, route: "/Quiz" },
   ];
 
