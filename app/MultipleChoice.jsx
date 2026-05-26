@@ -1,8 +1,8 @@
-import { View, Text, Pressable, ScrollView } from "react-native";
-import React, { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect, useState } from "react";
+import { Pressable, ScrollView, Text, View } from "react-native";
 import quiz from "../assets/api/quiz";
 import BottomNav from "./BottomNav";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const STORAGE_KEY = "multipleChoiceScore";
 
@@ -88,10 +88,8 @@ const MultipleChoice = () => {
   };
 
   const question = quiz[currentQuestion];
-  const previousAnswer = answeredQuestions[question.id];
 
-  const hasChoices = question.choices && question.choices.length > 0;
-  const hasAnswer = question.correctAnswer && question.correctAnswer !== "";
+  const previousAnswer = question ? answeredQuestions[question.id] : null;
 
   useEffect(() => {
     if (previousAnswer) {
@@ -102,6 +100,13 @@ const MultipleChoice = () => {
       setShowFeedback(false);
     }
   }, [currentQuestion]);
+
+  if (!question) {
+    return null;
+  }
+
+  const hasChoices = question.choices && question.choices.length > 0;
+  const hasAnswer = question.correctAnswer && question.correctAnswer !== "";
 
   return (
     <View className="flex-1 relative bg-purple-50">

@@ -72,20 +72,20 @@ const Converter = () => {
   return (
     <View className="flex-1 bg-purple-50">
       <ScrollView className="p-4">
-        <Text className="text-2xl font-bold text-purple-900">
+        <Text className="text-3xl font-bold text-purple-900">
           Dressmaking Converter
         </Text>
-        <Text className="text-gray-600 mt-2 mb-4">
+        <Text className="text-gray-600 mt-2 mb-4 text-justify text-lg">
           Convert measurements, calculate seam allowances, and get ease
           suggestions for your patterns.
         </Text>
         <Pressable onPress={() => router.push("Record")} className="my-8">
-          <Text className="text-md font-bold underline text-blue-500">
+          <Text className="text-lg font-bold underline text-blue-500">
             Open Measurement Recorder
           </Text>
         </Pressable>
         <View className="bg-white rounded-xl p-4 shadow mb-6">
-          <Text className="font-semibold text-purple-800 mb-2">
+          <Text className="font-semibold text-purple-800 mb-2 text-lg">
             Measurement Input
           </Text>
           <TextInput

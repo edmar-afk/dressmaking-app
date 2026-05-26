@@ -10,7 +10,7 @@ const Badges = () => {
         <Feather name="award" size={28} color="purple" className="mr-2" />
         <Text className="text-2xl font-bold">Badges and Achievements</Text>
       </View>
-      <Text className="mt-2 text-gray-600 text-lg">
+      <Text className="mt-2 text-gray-600 text-lg text-justify">
         Track your progress in dressmaking quizzes, lessons, records, guides,
         and tutorials and unlock Achievements and Badges throughout the course.
       </Text>

@@ -83,7 +83,7 @@ const Tutorial = () => {
             };
           }}
         >
-          <Text className="text-lg font-bold text-purple-800 mb-3">
+          <Text className="text-xl font-bold text-purple-800 mb-3">
             1. How to Use a Tape Measure
           </Text>
 
@@ -93,26 +93,26 @@ const Tutorial = () => {
             allowsPictureInPicture
             style={{ height: 200, borderRadius: 12 }}
           />
-          <View className="flex-row items-center mt-2">
-            <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=hI-fhFyS6a8</Text>
+          <View className="flex-row items-center mt-2 pr-6">
+            <Text className="text-md mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=hI-fhFyS6a8</Text>
             <Feather name="youtube" size={18} color="red" />
           </View>
 
-          <Text className="mt-4 text-gray-700 font-semibold">Steps</Text>
+          <Text className="mt-4 text-gray-700 font-semibold text-lg">Steps</Text>
 
-          <Text className="text-gray-600 mt-2">
+          <Text className="text-gray-600 mt-2 text-lg">
             1. Hold the beginning of the tape measure at number 0.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             2. Stretch the tape gently across the area you want to measure.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             3. Look at the number where the tape ends.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             4. Measurements are usually read in inches or centimeters.
           </Text>
         </View>
@@ -126,7 +126,7 @@ const Tutorial = () => {
             };
           }}
         >
-          <Text className="text-lg font-bold text-purple-800 mb-3">
+          <Text className="text-xl font-bold text-purple-800 mb-3">
             2. Taking Body Measurements
           </Text>
 
@@ -136,26 +136,26 @@ const Tutorial = () => {
             allowsPictureInPicture
             style={{ height: 200, borderRadius: 12 }}
           />
-          <View className="flex-row items-center mt-2">
-            <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=3ZSfY87v6pM</Text>
+          <View className="flex-row items-center mt-2 pr-6">
+            <Text className="text-md mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=3ZSfY87v6pM</Text>
             <Feather name="youtube" size={18} color="red" />
           </View>
 
-          <Text className="mt-4 text-gray-700 font-semibold">Steps</Text>
+          <Text className="mt-4 text-gray-700 font-semibold text-lg">Steps</Text>
 
-          <Text className="text-gray-600 mt-2">
+          <Text className="text-gray-600 mt-2 text-lg">
             1. Ask the person to stand straight and relaxed.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             2. Place the tape measure around the body part you want to measure.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             3. Do not pull the tape too tight or too loose.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             4. Record the measurement immediately so you don’t forget.
           </Text>
         </View>
@@ -169,7 +169,7 @@ const Tutorial = () => {
             };
           }}
         >
-          <Text className="text-lg font-bold text-purple-800 mb-3">
+          <Text className="text-xl font-bold text-purple-800 mb-3">
             3. Correct Posture During Measuring
           </Text>
 
@@ -179,26 +179,26 @@ const Tutorial = () => {
             allowsPictureInPicture
             style={{ height: 200, borderRadius: 12 }}
           />
-          <View className="flex-row items-center mt-2">
-            <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=PopVQruxSPY&t=51s</Text>
+          <View className="flex-row items-center mt-2 pr-6">
+            <Text className="text-md mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=PopVQruxSPY&t=51s</Text>
             <Feather name="youtube" size={18} color="red" />
           </View>
 
-          <Text className="mt-4 text-gray-700 font-semibold">Steps</Text>
+          <Text className="mt-4 text-gray-700 font-semibold text-lg">Steps</Text>
 
-          <Text className="text-gray-600 mt-2">
+          <Text className="text-gray-600 mt-2 text-lg">
             1. Stand upright with your shoulders relaxed.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             2. Keep your feet slightly apart for balance.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             3. Keep your arms relaxed at your sides.
           </Text>
 
-          <Text className="text-gray-600">
+          <Text className="text-gray-600 text-lg">
             4. Do not bend or slouch while being measured.
           </Text>
         </View>

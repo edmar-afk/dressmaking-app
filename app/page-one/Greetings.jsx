@@ -12,7 +12,7 @@ const Greetings = () => {
 
   return (
     <View className="mt-4">
-      <Text className="text-lg font-light mb-4">{greeting}, User!</Text>
+      <Text className="text-2xl font-normal mb-4">{greeting}, User!</Text>
       <Text className="text-3xl font-bold ">
         Learn accurate measurements for a perfect fit
       </Text>

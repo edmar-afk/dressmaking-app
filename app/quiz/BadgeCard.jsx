@@ -78,7 +78,7 @@ const BadgeCard = () => {
                 }`}
               >
                 <Text
-                  className={`text-[10px] font-semibold ${
+                  className={`text-lg font-semibold ${
                     unlocked ? "text-green-800" : "text-red-800"
                   }`}
                 >
@@ -87,7 +87,7 @@ const BadgeCard = () => {
               </View>
 
               <Text
-                className={`text-sm font-semibold text-center mb-1 ${
+                className={`text-lg font-semibold text-center mb-1 ${
                   unlocked ? "text-green-800" : "text-red-800"
                 }`}
               >
@@ -95,14 +95,14 @@ const BadgeCard = () => {
               </Text>
 
               <Text
-                className="text-[10px] text-gray-600 text-center mb-1"
+                className="text-lg text-gray-600 text-center mb-1"
                 numberOfLines={2}
               >
                 {badge.desc}
               </Text>
 
               <Text
-                className={`text-xs font-bold ${
+                className={`text-lg font-bold ${
                   unlocked ? "text-green-700" : "text-red-700"
                 }`}
               >

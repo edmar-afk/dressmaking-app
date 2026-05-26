@@ -9,13 +9,13 @@ const Tools = () => {
 
   return (
     <View className="">
-      <Text className="text-2xl font-semibold">Measurement Tools</Text>
+      <Text className="text-3xl font-semibold">Measurement Tools</Text>
 
-      <Text className="text-lg text-gray-600 mt-2">
+      <Text className="text-xl text-justify text-gray-600 mt-2">
         Measurement tools in dressmaking are devices used to take accurate body
         measurements needed in making well-fitted garments.
       </Text>
-      <Text className="text-lg text-gray-600 mt-2">
+      <Text className="text-xl text-justify text-gray-600 mt-2">
         Here are the measurement tools you'll need for your dressmaking
         journey. Tap for more details:
       </Text>

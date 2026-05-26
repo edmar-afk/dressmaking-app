@@ -25,7 +25,7 @@ const Career = () => {
 
   return (
     <View className="flex-1 px-4">
-      <Text className="text-lg text-gray-600 mt-3 leading-7">
+      <Text className="text-xl text-gray-600 mt-3 leading-7 text-justify">
         Dressmaking offers a variety of career opportunities for individuals who
         have skills in sewing, garment construction, and fashion design. People
         who study dressmaking can work in different areas of the clothing and
@@ -34,7 +34,7 @@ const Career = () => {
       </Text>
 
       <View>
-        <Text className="text-2xl font-bold mt-4">1. Dressmaker</Text>
+        <Text className="text-3xl font-bold mt-4">1. Dressmaker</Text>
         <VideoView
           player={dressmakerPlayer}
           nativeControls
@@ -45,12 +45,12 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
-        <View className="flex-row items-center mt-2">
-          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=Gxh29ZRS25g&t=49s</Text>
+        <View className="flex-row items-center mt-2 pr-7">
+          <Text className="text-lg mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=Gxh29ZRS25g&t=49s</Text>
           <Feather name="youtube" size={18} color="red" />
         </View>
 
-        <Text className="text-lg text-gray-600 mt-4 leading-7">
+        <Text className="text-xl text-gray-600 mt-4 leading-7 text-justify mb-8">
           Dressmaking offers a variety of career opportunities for individuals
           who have skills in sewing, garment construction, and fashion design.
           People who study dressmaking can work in different areas of the
@@ -60,7 +60,7 @@ const Career = () => {
       </View>
 
       <View>
-        <Text className="text-2xl font-bold mt-4">2. Tailor</Text>
+        <Text className="text-3xl font-bold mt-4">2. Tailor</Text>
         <VideoView
           player={tailorPlayer}
           nativeControls
@@ -71,12 +71,12 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
-        <View className="flex-row items-center mt-2">
-          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=hEFRX8iV_AI&t=1s</Text>
+        <View className="flex-row items-center mt-2 pr-7">
+          <Text className="text-lg mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=hEFRX8iV_AI&t=1s</Text>
           <Feather name="youtube" size={18} color="red" />
         </View>
 
-        <Text className="text-lg text-gray-600 mt-4 leading-7">
+        <Text className="text-xl text-gray-600 mt-4 leading-7 text-justify mb-8">
           A tailor focuses on making, repairing, and adjusting garments to
           ensure they fit properly. Unlike mass-produced clothing, tailored
           garments are customized to match the exact body measurements of the
@@ -91,7 +91,7 @@ const Career = () => {
       </View>
 
       <View>
-        <Text className="text-2xl font-bold mt-4">2. Fashion Designer</Text>
+        <Text className="text-3xl font-bold mt-4">2. Fashion Designer</Text>
         <VideoView
           player={fashionDesignerPlayer}
           nativeControls
@@ -102,12 +102,12 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
-        <View className="flex-row items-center mt-2">
-          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=367veujwj_Y&t=30s</Text>
+        <View className="flex-row items-center mt-2 pr-7">
+          <Text className="text-lg mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=367veujwj_Y&t=30s</Text>
           <Feather name="youtube" size={18} color="red" />
         </View>
 
-        <Text className="text-lg text-gray-600 mt-4 leading-7">
+        <Text className="text-xl text-justify mb-8 text-gray-600 mt-4 leading-7">
           A fashion designer is responsible for creating new clothing styles,
           accessories, and fashion collections. They combine creativity with
           technical skills to design garments that follow fashion trends or
@@ -123,7 +123,7 @@ const Career = () => {
       </View>
 
       <View>
-        <Text className="text-2xl font-bold mt-4">
+        <Text className="text-3xl font-bold mt-4">
           2. Alteration Specialist
         </Text>
         <VideoView
@@ -136,12 +136,12 @@ const Career = () => {
             borderRadius: 12,
           }}
         />
-        <View className="flex-row items-center mt-2">
-          <Text className="text-xs mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=oezNGspma18</Text>
+        <View className="flex-row items-center mt-2 pr-7">
+          <Text className="text-lg mr-2 text-gray-600">Source: https://www.youtube.com/watch?v=oezNGspma18</Text>
           <Feather name="youtube" size={18} color="red" />
         </View>
 
-        <Text className="text-lg text-gray-600 mt-4 leading-7">
+        <Text className="text-xl text-justify mb-8 text-gray-600 mt-4 leading-7">
           An alteration specialist focuses on modifying and adjusting existing
           clothing to improve its fit, comfort, or style. They shorten hems,
           resize garments, repair damaged clothing, and adjust garments to match

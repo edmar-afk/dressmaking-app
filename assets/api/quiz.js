@@ -129,15 +129,15 @@ const quiz = [
     category: "Multiple Choice",
   },
 
-  {
-    id: 10,
-    question:
-      "Reflection: \nHow can accurate use of dressmaking measuring tools, along with patience and attention to detail, help you achieve proper garment fit in real-life situations?",
-    choices: [],
-    correctAnswer: "",
-    explainCorrectAnswer: "",
-    category: "Multiple Choice",
-  },
+  // {
+  //   id: 10,
+  //   question:
+  //     "Reflection: \nHow can accurate use of dressmaking measuring tools, along with patience and attention to detail, help you achieve proper garment fit in real-life situations?",
+  //   choices: [],
+  //   correctAnswer: "",
+  //   explainCorrectAnswer: "",
+  //   category: "Multiple Choice",
+  // },
 ];
 
 export default quiz;

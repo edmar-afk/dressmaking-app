@@ -9,9 +9,9 @@ const Definition = () => {
         resizeMode="cover"
         className="w-full h-72 rounded-xl"
       />
-      <Text className="text-2xl font-bold mt-8">Definition of Dressmaking</Text>
+      <Text className="text-3xl font-bold mt-8">Definition of Dressmaking</Text>
 
-      <Text className="text-lg text-gray-600 mt-3 leading-7">
+      <Text className="text-xl text-gray-600 mt-3 leading-7 text-justify">
         Dressmaking is the process of designing, measuring, cutting, and sewing
         fabric to create garments such as dresses, skirts, blouses, and other
         clothing. It involves different skills including taking body

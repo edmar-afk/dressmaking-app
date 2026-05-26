@@ -101,17 +101,17 @@ const Quiz = () => {
         className="p-4"
       >
         <View className="bg-white rounded-3xl p-6 shadow-2xl">
-          <Text className="text-base text-gray-500">{greeting}, 👋</Text>
-          <Text className="text-3xl font-bold mt-1">
+          <Text className="text-lg text-gray-500">{greeting} 👋</Text>
+          <Text className="text-4xl font-bold mt-1">
             Ready to test your{" "}
             <Text className="text-purple-600">Knowledge?</Text>
           </Text>
-          <Text className="text-gray-500 mt-3">
+          <Text className="text-gray-500 mt-3 text-lg">
             To update, tap the quiz again to see latest results.
           </Text>
 
           <View className="mt-4 bg-purple-50 border border-purple-200 p-4 rounded-xl">
-            <Text className="text-purple-700 font-medium text-center">
+            <Text className="text-purple-700 font-medium text-center text-lg">
               {cheer}
             </Text>
           </View>
@@ -122,10 +122,10 @@ const Quiz = () => {
               className="bg-purple-500 py-5 px-4 rounded-2xl shadow-md active:opacity-80 flex-row justify-between items-center"
             >
               <View>
-                <Text className="text-white text-lg font-semibold">
+                <Text className="text-white text-2xl font-semibold">
                   Multiple Choice
                 </Text>
-                <Text className="text-purple-100 text-sm mt-1">
+                <Text className="text-purple-100 text-lg mt-1">
                   Pick the correct answer
                 </Text>
               </View>
@@ -139,7 +139,7 @@ const Quiz = () => {
                   onPress={() => resetScore(STORAGE_KEYS.mc)}
                   className="bg-red-500 px-3 py-2 rounded-xl"
                 >
-                  <Text className="text-white font-semibold">Retry</Text>
+                  <Text className="text-white font-semibold text-lg">Retry</Text>
                 </Pressable>
               </View>
             </Pressable>

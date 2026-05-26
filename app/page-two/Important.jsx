@@ -12,8 +12,8 @@ const FeatureItem = ({ title, desc, icon }) => {
       </View>
 
       <View className="flex-1">
-        <Text className="font-semibold text-lg">{title}</Text>
-        <Text className="text-gray-500 mt-1">{desc}</Text>
+        <Text className="font-semibold text-2xl">{title}</Text>
+        <Text className="text-gray-500 mt-1 text-lg text-justify">{desc}</Text>
       </View>
     </View>
   );
@@ -30,11 +30,11 @@ const Important = () => {
         />
 
         <View className="mt-8">
-          <Text className="text-2xl font-bold">
+          <Text className="text-3xl font-bold">
             Why accurate measurements are important
           </Text>
 
-          <Text className="mt-2">
+          <Text className="mt-2 text-xl text-justify">
             Proper measurements ensure clothes fit correctly and comfortably.
           </Text>
         </View>

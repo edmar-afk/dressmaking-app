@@ -30,7 +30,7 @@ export default function Index() {
         <Text className="text-3xl font-extrabold text-gray-800 text-center px-6">
           Welcome to MeasureFit – Measure & Create!
         </Text>
-        <Text className="text-lg text-center mt-4 px-8">
+        <Text className="text-xl text-center mt-4 px-8">
           Measure with care, craft with creativity, and bring your ideas to
           life, one stitch at a time.
         </Text>
@@ -38,7 +38,7 @@ export default function Index() {
           onPress={() => router.push("PageOne")}
           className="mt-12 bg-purple-500 px-24 py-5 rounded-lg mb-8"
         >
-          <Text className="text-white text-lg font-semibold">
+          <Text className="text-white text-xl font-semibold">
             Let's Get Started
           </Text>
         </Pressable>

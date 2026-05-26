@@ -21,7 +21,7 @@ const Progress = () => {
 
         <View className="flex flex-col">
           <Text className="ml-3 text-lg font-bold">Progress Overview</Text>
-          <Text className="ml-3 text-md font-light">
+          <Text className="ml-3 text-xl font-normal">
             Monitor your learning below.
           </Text>
         </View>

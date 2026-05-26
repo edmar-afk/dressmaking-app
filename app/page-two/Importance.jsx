@@ -8,11 +8,11 @@ const Importance = () => {
         resizeMode="cover"
         className="w-full h-72 rounded-xl"
       />
-      <Text className="text-2xl font-bold mt-8">
+      <Text className="text-3xl font-bold mt-8">
         Importance of dressmaking in daily life and fashion industry
       </Text>
 
-      <Text className="text-lg text-gray-600 mt-3 leading-7">
+      <Text className="text-xl text-gray-600 mt-3 leading-7 text-justify">
         Dressmaking plays an important role in both daily life and the fashion
         industry because it allows people to create, repair, and customize
         clothing according to their needs and personal style. In everyday life,

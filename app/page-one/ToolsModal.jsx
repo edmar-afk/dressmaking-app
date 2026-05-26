@@ -64,25 +64,25 @@ const ToolsModal = ({ tool }) => {
              
               </View>
 
-              <Text className="mt-4 font-semibold mb-1">Tool Description</Text>
-              <Text className="text-gray-600 mb-3 text-justify">
+              <Text className="mt-4 font-semibold mb-1 text-xl">Tool Description</Text>
+              <Text className="text-gray-600 mb-3 text-justify text-lg">
                 {tool.description}
               </Text>
 
-              <Text className="mt-4 font-semibold mb-1">Uses</Text>
-              <Text className="text-gray-600 mb-3 text-justify">
+              <Text className="mt-4 font-semibold mb-1 text-xl">Uses</Text>
+              <Text className="text-gray-600 mb-3 text-justify text-lg">
                 {tool.uses}
               </Text>
 
-              <Text className="mt-4 font-semibold mb-1">Proper handling</Text>
-              <Text className="text-gray-600 mb-3 text-justify">
+              <Text className="mt-4 font-semibold mb-1 text-xl">Proper handling</Text>
+              <Text className="text-gray-600 mb-3 text-justify text-lg">
                 {tool.handling}
               </Text>
 
-              <Text className="mt-4 font-semibold mb-1">
+              <Text className="mt-4 font-semibold mb-1 text-xl">
                 Cleaning and storage tips
               </Text>
-              <Text className="text-gray-600 mb-24 text-justify">
+              <Text className="text-gray-600 mb-24 text-justify text-lg">
                 {tool.tips}
               </Text>
             </ScrollView>

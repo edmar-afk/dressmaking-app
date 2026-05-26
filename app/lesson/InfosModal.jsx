@@ -87,7 +87,7 @@ const InfosModal = ({ desc, triggerText, styles, onPress }) => {
                 >
                   {triggerText}
                 </Text>
-                <Text className="text-gray-800 p-4 text-lg text-justify">
+                <Text className="text-gray-800 p-4 text-xl text-justify">
                   {desc}
                 </Text>
               </Animated.View>

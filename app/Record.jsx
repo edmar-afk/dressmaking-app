@@ -26,10 +26,10 @@ const Guide = () => {
   return (
     <View className="flex-1 bg-purple-50">
       <View className="p-4">
-        <Text className="text-xl font-bold text-purple-900">
+        <Text className="text-2xl font-bold text-purple-900">
           Dressmaking Measurements
         </Text>
-        <Text className="text-gray-600 mt-2 leading-relaxed">
+        <Text className="text-gray-600 mt-2 leading-relaxed text-justify text-lg">
           This section allows you to record and manage your clients' dressmaking
           measurements. Add new clients and store important body measurements
           such as bust, waist, hips, sleeve length, and skirt length. You can
@@ -39,14 +39,14 @@ const Guide = () => {
       </View>
       <View className="flex flex-row items-center justify-between px-4 mt-8">
         <Pressable onPress={() => router.push("Converter")}>
-          <Text className="text-md font-bold underline text-blue-500">
+          <Text className="text-lg font-bold underline text-blue-500">
             Open Converter
           </Text>
         </Pressable>
         <MeasurementModal onSave={loadMeasurements} />
       </View>
 
-      <Text className='p-4 text-orange-400 font-light text-lg'>If data isn't display properly, tap the record from bottom navigation again to refresh.</Text>
+      <Text className='p-4 text-orange-400 font-bold text-center text-lg'>If data isn't display properly, tap the record from bottom navigation again to refresh.</Text>
       <Table measurements={measurements} />
 
       <BottomNav />
